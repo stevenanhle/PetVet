@@ -1,0 +1,26 @@
+<div class="container" id="menuitems">
+    <div ng-repeat="first in dishes" ng-if="$index==0">
+	  <h2 id="menu-categories-title" class="text-center intro">  	
+	   
+	  </h2>
+    </div>
+    <div class="menu-item-tile col-md-6" ng-repeat="product in products">
+	  <div class="row">
+	    <div class="col-sm-5">
+	      <div class="menu-item-photo">
+	        <a ui-sref="app.menu.dishdetails({id: product._id})">
+	        <img class="img-responsive" width="250" height="150" ng-src="images/{{product.category}}/{{product.short_name}}.jpg" alt="{{product.name}}"></a>
+	      </div>
+	      <div class="menu-item-price">{{product.price| currency}}</div>
+	    </div>
+	    <div class="menu-item-description col-sm-7">
+	      <button  ng-click="AddtoFavorite(product._id)" class="btn btn-lg btn-primary pull-right" type="button">
+                         
+        </button><h3 class="menu-item-title intro">{{product.name}}</h3>
+	      <p class="menu-item-details intro">{{product.description}}</p>
+	    </div>  
+	  </div>
+	  <hr class="visible-xs">
+	</div>
+</div>
+

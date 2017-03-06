@@ -1,0 +1,16 @@
+body {
+    padding: 20px 0;
+}
+ 
+.flash-message {
+    margin-top: 20px;
+}
+
+.equal {
+  display: flex;
+}
+
+.equal > div[class*='col-'] {  
+  display: flex;
+  flex-direction: column;
+}

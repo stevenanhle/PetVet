@@ -1,0 +1,41 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <h2 id="favorite">My Basket</h2>
+               <hr>
+            </div>
+        </div>
+        <div class="row row-content">
+         <button  ng-click="showFavorite()" class="btn btn-lg pull-right" type="button"></button>
+                
+            <div class="col-xs-12">
+                <div class="tab-content">
+                <ul class=" tab-pane fade in active">
+                <li class="" ng-repeat="item in list | filter:filtText">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div id="pic">      
+                                <img class="media-object img-thumbnail"
+                                ng-src="images/{{item.category}}/{{item.short_name}}.jpg" alt="">
+                                 <a ui-sref="app.dishdetails({id: dish.favoriteDishes._id})"><h2><span class="label label-warning label-lg">{{item.short_name}}</span></h2></a> 
+                            </div>
+                        </div>
+                        <div class="menu-item-description col-sm-7 intro">
+                            <h3 class="intro">{{item.name}}
+                            <span class="badge">{{item.price_small | currency}}</span></h3>
+                             <button   ng-click="deleteFavorite(item._id)" class="btn btn-xs btn-danger pull-right visible-sm visible-md visible-lg"
+                        type="button">
+                              <i class="fa fa-remove"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+            </ul>
+
+            </div>
+            </div>
+        </div>
+
+    </div>
